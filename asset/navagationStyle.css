@@ -1,0 +1,87 @@
+*{
+    padding: 0 ;
+    margin : 0 ;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex ;
+    font-family: "Poppins" , sans-serif;
+    font-size: 16px ;
+}
+
+body > div {
+    margin : 5% auto 0;
+    max-width: 720px ;
+}
+
+.tabs {
+    display: flex;
+    position: relative;
+}
+
+.tabs .line{
+    position : absolute ;
+    left :0px ;
+    bottom : 0px ;
+    height : 6px ;
+    border-radius : 15px ;
+    background-color: #c23564;
+    transition : all 0.5s ease ;
+}
+
+.tab-item{
+    min-width : 80px ;
+    font-size: 20px ;
+    color :#c23564 ;
+    padding : 16px 20px 11px 20px ;
+    text-align: center;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
+    border-bottom : 5px solid transparent ;
+    opacity:0.6 ;
+    cursor: pointer ;
+    transition : all 0.5s ease ;
+    letter-spacing: 0.5px ;
+}
+
+.tab-item i {
+    font-size : 24px ;
+    width : 32px ;
+    position : relative ;
+    top : 2px ;
+}
+
+.tab-item.active {
+    opacity : 1 ;
+}
+
+.tab-item:hover{
+    opacity : 1 ;
+    background-color: rgba(194,53,100,0.05);
+    border-color: rgba(194,53,100,0.1);
+}
+
+.tab-contents{
+    padding : 28px 0 ;
+}
+
+.tab-content{
+    display : none ;
+}
+
+.tab-content h2{
+    margin-bottom :8px ;
+}
+
+.tab-content .content{
+    font-size: 16px ;
+    line-height: 1.5;
+    white-space: 0.8px;
+}
+
+.tab-content.active{
+    display : block ;
+}
+
+

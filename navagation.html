@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script src="navagationAction.js"></script>-->
+    <link rel="stylesheet" href="./asset/navagationStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div>
+        <div class="tabs">
+            <div class="tab-item active">
+                <i class="fa-solid fa-code"></i>
+                React
+            </div>
+            <div class="tab-item">
+                <i class="fa-solid fa-gear"></i>
+                Angular
+            </div>
+            <div class="tab-item">
+                <i class="fa-solid fa-circle-plus"></i>
+                Ember
+            </div>
+            <div class="tab-item">
+                <i class="fa-solid fa-pen-nib"></i>
+                Vue.js
+            </div>
+            <div class="line"></div>
+        </div>
+
+    <div class="tab-contents">
+        <div class="tab-content active">
+                <h2>React</h2>
+            <div class="content">React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.</div>
+        </div>
+        <div class="tab-content">
+            <h2>Angular</h2>
+            <div class="content">Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.</div>
+        </div>
+        <div class="tab-content">
+            <h2>Ember</h2>
+            <div class="content">Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich UIs that work on any device.</div>
+        </div>
+        <div class="tab-content">
+            <h2>Design</h2>
+            <div class="content">Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.</div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document) ;
+
+        const tabs = $$('.tab-item')
+        const contents = $$('.tab-content') ;
+        const tabActive = $('.tab-item.active') ;
+        const line = $('.tabs .line') ;
+        line.style.left = tabActive.offsetLeft +"px" ;
+        line.style.width = tabActive.offsetWidth +"px" ;
+        
+
+        tabs.forEach(function(tab,index){
+            const content = contents[index];
+            //$(".tab-content.active").classList.remove("active");
+            tab.onclick = function(){
+                //line.style.left = this.offsetWidth +"px" ;
+                //line.style.width = this.offsetWidth +"px" ;
+                $('.tab-content.active').classList.remove('active');
+                $('.tab-item.active').classList.remove('active') ;
+                line.style.left = this.offsetLeft +"px" ;
+                line.style.width = this.offsetWidth +"px" ;
+                this.classList.add('active');
+                content.classList.add('active') ;
+
+            // $("tab-content").classList.add("active") ;
+            };
+        });
+    </script>
+</body>
+</html>
